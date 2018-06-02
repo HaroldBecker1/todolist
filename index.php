@@ -1,10 +1,8 @@
 <?php
     require 'autoloader.php';
 
-    use Entity\Task;
-    use Service\Task as Service;
+    use Service\Task;
 
     echo 'in construction <br>';
-    $x = new Service();
 
-?>
+    $task = new Task();
