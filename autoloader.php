@@ -6,13 +6,10 @@
             spl_autoload_register(function ($class) {
                 $file = str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php';
 
-                if (file_exists($file)) {
-                    require $file;
+                if (!file_exists($file))
+                    throw new \Exception("Arquivo '$file' não encontrado.");
 
-                    return true;
-                }
-
-                return false;
+                require $file;
             });
         }
     }
