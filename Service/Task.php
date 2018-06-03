@@ -31,7 +31,7 @@
 
         /**
         * Function used to get all saved tasks from database
-        * @param $order string
+        * @param $order integer
         * @return array
         */
         public function getTasks ($orderOption = 1)
@@ -127,7 +127,6 @@
             if ($result < 1)
                 throw new \Exception("Ocorreu um erro ao remover a tarrefa.");
         }
-
 
         /**
         * Callback to test empty values in a matrix
