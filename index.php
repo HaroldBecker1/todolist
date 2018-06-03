@@ -43,7 +43,7 @@
              ));
         }
 
-        $tasks = $task->getTasks();
+        $tasks = $task->getTasks(2);
 
         // Print the edited values and remove them
         foreach ($tasks as $key => $value) {

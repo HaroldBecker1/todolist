@@ -34,9 +34,12 @@
         * @param $order string
         * @return array
         */
-        public function getTasks ($order = "DESC")
+        public function getTasks ($orderOption = 1)
         {
-            $sql = "SELECT * FROM task ORDER BY done ASC, sort_order ASC";
+            $order = array(1 => 'ASC', 2 => 'DESC');
+
+            $sql = "SELECT * FROM task ORDER BY done ASC,
+                sort_order $order[$orderOption], date_created ASC";
             $stmt = $this->conn->prepare($sql);
 
             $stmt->execute();
